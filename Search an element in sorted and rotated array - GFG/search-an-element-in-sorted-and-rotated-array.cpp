@@ -44,12 +44,16 @@ int Search(vector<int> arr, int x) {
         if(arr[mid] == x){
             return mid; 
         }
-        if(arr[mid] > arr[st]){
-            if(arr[mid] > x && arr[st] <= x) e = mid-1;
+        else if(arr[st] < arr[mid]){
+            if(arr[mid] > x && arr[st] <=x){
+                e = mid-1; 
+            }
             else st = mid+1; 
-        }else{
-            if(arr[mid] < x && arr[e] >= x) st = mid+1; 
-            else e = mid-1; 
+        }
+        else{
+            if(arr[mid] < x && arr[e]>=x){
+                st = mid+1; 
+            }else e = mid-1; 
         }
     }
     
